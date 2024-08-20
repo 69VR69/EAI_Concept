@@ -1,0 +1,9 @@
+-> Implement the state machine
+	-> Implement transitions
+
+------------LONG TERM----
+-> Add logging features
+-> Add conditions in the state machine
+-> Add breakpoint in the state machine
+-> Add Source generator based statemachine compilation (+ saving / loading)
+-> Add Auto Command Strategies Chooser (like if big data volume use etl V2 setup)
