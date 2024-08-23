@@ -7,7 +7,7 @@ namespace EAI_Concept.Interfaces.Instructions.Commands.Querycommands
         public int NbImpactedLines { get; init; } = nbImpactedLines;
     }
 
-    public class UpdateValuesQueryCommand(QueryInstruction instruction) : QueryCommandHolder<UpdateValuesQueryCommandResult>(instruction)
+    public class UpdateValuesQueryCommand(QueryInstructionParameters instruction) : QueryCommandHolder<UpdateValuesQueryCommandResult>(instruction)
     {
         public override async Task<UpdateValuesQueryCommandResult> Execute()
         {

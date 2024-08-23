@@ -7,7 +7,7 @@ namespace EAI_Concept.Interfaces.Instructions.Commands.FileCommands
         public string DeletedFilePath { get; init; } = deletedFilePath;
     }
 
-    public class DeleteFileCommand(FileInstruction instruction) : FileCommandHolder<DeleteFileCommandResult>(instruction)
+    public class DeleteFileCommand(FileInstructionParameters instruction) : FileCommandHolder<DeleteFileCommandResult>(instruction)
     {
         public override async Task<DeleteFileCommandResult> Execute()
         {

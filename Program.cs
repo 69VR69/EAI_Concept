@@ -7,7 +7,7 @@ namespace EAI_Concept
     {
         static void Main(string[] _)
         {
-            InstructionFactory factory = new();
+            InstructionParametersFactory factory = new();
 
             var myfileInstr = factory.CreateInstruction(InstructionType.File);
             Console.WriteLine($"My file instruction : \n{myfileInstr}");
