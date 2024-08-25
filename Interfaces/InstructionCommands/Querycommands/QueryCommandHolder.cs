@@ -1,7 +1,6 @@
-﻿
-using EAI_Concept.Interfaces.Instructions.Factories;
+﻿using EAI_Concept.Interfaces.Parameters;
 
-namespace EAI_Concept.Interfaces.Instructions.Commands.Querycommands
+namespace EAI_Concept.Interfaces.InstructionCommands.Querycommands
 {
     public abstract class BaseQueryCommandResult(bool isSuccess) : BaseInstructionCommandResult(isSuccess) { }
 

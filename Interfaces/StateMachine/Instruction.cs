@@ -1,5 +1,5 @@
-﻿using EAI_Concept.Interfaces.Instructions.Commands;
-using EAI_Concept.Interfaces.Instructions.Factories;
+﻿using EAI_Concept.Interfaces.InstructionCommands;
+using EAI_Concept.Interfaces.Parameters;
 
 namespace EAI_Concept.interfaces.transitions
 {

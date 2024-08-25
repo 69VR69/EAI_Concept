@@ -1,6 +1,6 @@
-﻿using EAI_Concept.Interfaces.Instructions.Factories;
+﻿using EAI_Concept.Interfaces.Parameters;
 
-namespace EAI_Concept.Interfaces.Instructions.Commands.Querycommands
+namespace EAI_Concept.Interfaces.InstructionCommands.Querycommands
 {
     public class UpdateValuesQueryCommandResult(bool isSucess, int nbImpactedLines) : BaseQueryCommandResult(isSucess)
     {

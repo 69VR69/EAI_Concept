@@ -1,5 +1,6 @@
 -> Implement the state machine
 	-> Implement transitions
+-> Add Builder pattern
 
 ------------LONG TERM----
 -> Add logging features

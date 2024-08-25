@@ -1,7 +1,5 @@
-﻿namespace EAI_Concept.Interfaces.Instructions.Factories
+﻿namespace EAI_Concept.Interfaces.Parameters.Factories
 {
-    public abstract record BaseInstructionParameters(InstructionType Type);
-
     public abstract class BaseInstructionParametersFactory
     {
         public abstract BaseInstructionParameters CreateInstruction();

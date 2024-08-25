@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\InstructionCommands\Factories\" />
+    <Folder Include="Interfaces\Strategies\Execution\Factories\" />
+    <Folder Include="Interfaces\Strategies\Transition\Factories\" />
+  </ItemGroup>
+
 </Project>

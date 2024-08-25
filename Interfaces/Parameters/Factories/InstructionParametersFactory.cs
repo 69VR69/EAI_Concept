@@ -1,12 +1,7 @@
 ﻿using EAI_Concept.Utils.Exceptions;
 
-namespace EAI_Concept.Interfaces.Instructions.Factories
+namespace EAI_Concept.Interfaces.Parameters.Factories
 {
-    public enum InstructionType
-    {
-        File,
-        Query
-    }
 
     public class InstructionParametersFactory
     {

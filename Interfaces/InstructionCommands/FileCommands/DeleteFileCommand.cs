@@ -1,6 +1,6 @@
-﻿using EAI_Concept.Interfaces.Instructions.Factories;
+﻿using EAI_Concept.Interfaces.Parameters;
 
-namespace EAI_Concept.Interfaces.Instructions.Commands.FileCommands
+namespace EAI_Concept.Interfaces.InstructionCommands.FileCommands
 {
     public class DeleteFileCommandResult(bool isSucess, string deletedFilePath) : BaseFileCommandResult(isSucess)
     {

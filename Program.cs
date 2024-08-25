@@ -1,9 +1,9 @@
-﻿
-using EAI_Concept.Interfaces.Instructions.Factories;
+﻿using EAI_Concept.Interfaces.Parameters;
+using EAI_Concept.Interfaces.Parameters.Factories;
 
 namespace EAI_Concept
 {
-    public class Program
+    public partial class Program
     {
         static void Main(string[] _)
         {

@@ -1,7 +1,7 @@
-﻿using EAI_Concept.Interfaces.Instructions.Factories;
+﻿using EAI_Concept.Interfaces.Parameters;
 using EAI_Concept.Utils.Exceptions;
 
-namespace EAI_Concept.Interfaces.Instructions.Commands
+namespace EAI_Concept.Interfaces.InstructionCommands
 {
     public abstract class BaseInstructionCommandResult(bool isSuccess)
     {

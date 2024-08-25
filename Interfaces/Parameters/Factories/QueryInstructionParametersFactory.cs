@@ -1,7 +1,5 @@
-﻿namespace EAI_Concept.Interfaces.Instructions.Factories
+﻿namespace EAI_Concept.Interfaces.Parameters.Factories
 {
-    public record QueryInstructionParameters(string Query) : BaseInstructionParameters(InstructionType.Query);
-
     public class QueryInstructionParametersFactory : BaseInstructionParametersFactory
     {
         public override BaseInstructionParameters CreateInstruction()
