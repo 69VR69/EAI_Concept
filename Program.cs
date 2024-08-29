@@ -1,19 +1,50 @@
-﻿using EAI_Concept.Interfaces.Parameters;
-using EAI_Concept.Interfaces.Parameters.Factories;
+﻿using EAI_Concept.Interfaces.InstructionCommands.Factories;
+using EAI_Concept.Interfaces.StateMachine;
+using EAI_Concept.Interfaces.Strategies.Execution.Factories;
+using EAI_Concept.Interfaces.Strategies.Transition.Factories;
+using EAI_Concept.Services;
 
 namespace EAI_Concept
 {
-    public partial class Program
+    public class Program
     {
-        static void Main(string[] _)
+        static void Main(string[] args)
         {
-            InstructionParametersFactory factory = new();
+            string json = @"{
+            ""instructions"": [
+                {
+                    ""id"": ""instruction1"",
+                    ""command"": ""UpdateValuesQueryCommand"",
+                    ""transition"": {
+                        ""executionStrategy"": ""BasicExecutionStrategy"",
+                        ""transitionStrategies"": [
+                            ""ContextMapTransitionStrategy""
+                        ],
+                        ""nextInstruction"": { ""$ref"": ""#/instructions/1"" }
+                    }
+                },
+                {
+                    ""id"": ""instruction2"",
+                    ""command"": ""DeleteFileCommand""
+                }
+            ]
+        }";
 
-            var myfileInstr = factory.CreateInstruction(InstructionType.File);
-            Console.WriteLine($"My file instruction : \n{myfileInstr}");
+            InterfaceBuilderService instructionSetService = InitInterfaceBuilder();
 
-            var myqueryInstr = factory.CreateInstruction(InstructionType.Query);
-            Console.WriteLine($"My query instruciton : \n{myqueryInstr}");
+            Interface instructionSet = instructionSetService.DeserializeInstructionSet(json);
+
+            InstructionDebugger.PrintInstructions(instructionSet);
+        }
+
+        private static InterfaceBuilderService InitInterfaceBuilder()
+        {
+            var commandFactory = new InstructionCommandFactory();
+            var executionStrategyFactory = new ExecutionStrategyFactory();
+            var transitionStrategyFactory = new TransitionStrategyFactory();
+
+            var instructionSetService = new InterfaceBuilderService(commandFactory, executionStrategyFactory, transitionStrategyFactory);
+            return instructionSetService;
         }
     }
 }

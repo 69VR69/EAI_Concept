@@ -10,23 +10,39 @@ namespace EAI_Concept.Interfaces.InstructionCommands
 
     public interface IInstructionCommand
     {
+        public abstract void SetParameter(BaseInstructionParameters parameter);
         public abstract InstructionType Type { get; }
 
         public Task<BaseInstructionCommandResult> Execute();
     }
 
-    public abstract class BaseInstructionCommand<TParameters, TResult>(TParameters instruction) : IInstructionCommand
+#pragma warning disable CS8618 // Non-nullable field must contain a value => will be check through method Execute()
+    public abstract class BaseInstructionCommand<TParameters, TResult>() : IInstructionCommand
+#pragma warning restore CS8618
         where TParameters : BaseInstructionParameters
         where TResult : BaseInstructionCommandResult
     {
-        public InstructionType Type => Instruction.Type;
-        protected readonly TParameters Instruction = instruction;
+        public InstructionType Type => Instruction?.Type ?? InstructionType.None;
 
-        async Task<BaseInstructionCommandResult> IInstructionCommand.Execute() => await Execute();
+        public TParameters Instruction;
+
+        async Task<BaseInstructionCommandResult> IInstructionCommand.Execute()
+        {
+            if (Instruction is null)
+                throw new ArgumentNullException(nameof(Instruction));
+
+            return await Execute();
+        }
+
         public abstract Task<TResult> Execute();
 
         public static TCommand Create<TCommand>(TParameters instruction) where TCommand : TParameters
             => Activator.CreateInstance(typeof(TCommand), instruction) as TCommand
                ?? throw new CannotCreateCommand();
+
+        public void SetParameter(BaseInstructionParameters parameter)
+        {
+            Instruction = (TParameters)parameter;
+        }
     }
 }

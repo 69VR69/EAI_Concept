@@ -12,6 +12,8 @@ namespace EAI_Concept.interfaces.transitions
         {
             //
         }
+
+        public override string ToString()
+            => nameof(ContextMapTransitionStrategy);
     }
-#endregion
 }

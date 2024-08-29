@@ -1,24 +1,31 @@
 ﻿using EAI_Concept.Interfaces.InstructionCommands;
 using EAI_Concept.Interfaces.Parameters;
 
+using Newtonsoft.Json;
+
 namespace EAI_Concept.interfaces.transitions
 {
     using Command = IInstructionCommand;
 
-    public abstract class Instruction(Command command, Transition transition)
+    public class Instruction
     {
-        public InstructionType Type => command.Type;
-        protected Command command = command;
+        [JsonProperty("id")]
+        public required string Code { get; set; }
 
-        protected Transition transition = transition;
+        public InstructionType Type => Command.Type;
+        [JsonProperty("command")]
+        public required Command Command { get; set; }
+
+        [JsonProperty("transition")]
+        public required Transition Transition { get; set; }
 
         public async void Execute()
         {
-            var result = await command.Execute();
+            var result = await Command.Execute();
 
             // manage result
 
-            transition.NextInstruction();
+            Transition.LaunchNextInstruction();
         }
     }
 }

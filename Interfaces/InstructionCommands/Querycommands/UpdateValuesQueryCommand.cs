@@ -1,13 +1,11 @@
-﻿using EAI_Concept.Interfaces.Parameters;
-
-namespace EAI_Concept.Interfaces.InstructionCommands.Querycommands
+﻿namespace EAI_Concept.Interfaces.InstructionCommands.Querycommands
 {
     public class UpdateValuesQueryCommandResult(bool isSucess, int nbImpactedLines) : BaseQueryCommandResult(isSucess)
     {
         public int NbImpactedLines { get; init; } = nbImpactedLines;
     }
 
-    public class UpdateValuesQueryCommand(QueryInstructionParameters instruction) : QueryCommandHolder<UpdateValuesQueryCommandResult>(instruction)
+    public class UpdateValuesQueryCommand() : QueryCommandHolder<UpdateValuesQueryCommandResult>()
     {
         public override async Task<UpdateValuesQueryCommandResult> Execute()
         {
@@ -17,5 +15,7 @@ namespace EAI_Concept.Interfaces.InstructionCommands.Querycommands
 
             return new(isSucess: true, nbImpactedLines: 1);
         }
+        public override string ToString()
+            => nameof(UpdateValuesQueryCommand);
     }
 }

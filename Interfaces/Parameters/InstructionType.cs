@@ -3,6 +3,7 @@
     public enum InstructionType
     {
         File,
-        Query
+        Query,
+        None
     }
 }

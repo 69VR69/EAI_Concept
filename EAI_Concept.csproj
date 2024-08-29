@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\InstructionCommands\Factories\" />
-    <Folder Include="Interfaces\Strategies\Execution\Factories\" />
-    <Folder Include="Interfaces\Strategies\Transition\Factories\" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
 </Project>

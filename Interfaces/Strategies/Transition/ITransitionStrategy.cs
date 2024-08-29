@@ -7,6 +7,6 @@ namespace EAI_Concept.Interfaces.Strategies.Transition
     public interface ITransitionStrategy
     {
         void Apply(Parameters instructionParameters);
+
     }
-#endregion
 }

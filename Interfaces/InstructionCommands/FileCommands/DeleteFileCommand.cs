@@ -1,13 +1,11 @@
-﻿using EAI_Concept.Interfaces.Parameters;
-
-namespace EAI_Concept.Interfaces.InstructionCommands.FileCommands
+﻿namespace EAI_Concept.Interfaces.InstructionCommands.FileCommands
 {
     public class DeleteFileCommandResult(bool isSucess, string deletedFilePath) : BaseFileCommandResult(isSucess)
     {
         public string DeletedFilePath { get; init; } = deletedFilePath;
     }
 
-    public class DeleteFileCommand(FileInstructionParameters instruction) : FileCommandHolder<DeleteFileCommandResult>(instruction)
+    public class DeleteFileCommand() : FileCommandHolder<DeleteFileCommandResult>()
     {
         public override async Task<DeleteFileCommandResult> Execute()
         {
@@ -17,5 +15,7 @@ namespace EAI_Concept.Interfaces.InstructionCommands.FileCommands
 
             return new(isSucess: true, deletedFilePath: Instruction.Path);
         }
+        public override string ToString()
+            => nameof(DeleteFileCommand);
     }
 }

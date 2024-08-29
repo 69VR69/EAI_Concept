@@ -6,5 +6,4 @@ namespace EAI_Concept.Interfaces.Strategies.Execution
     {
         void Launch(Instruction node);
     }
-#endregion
 }
