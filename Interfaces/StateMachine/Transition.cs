@@ -2,6 +2,7 @@
 using EAI_Concept.Interfaces.Parameters.Factories;
 using EAI_Concept.Interfaces.Strategies.Execution;
 using EAI_Concept.Interfaces.Strategies.Transition;
+using EAI_Concept.Services;
 
 using Newtonsoft.Json;
 
@@ -9,14 +10,14 @@ namespace EAI_Concept.interfaces.transitions
 {
     public sealed class Transition
     {
-        private readonly static Lazy<InstructionParametersFactory> factory = new(() => new InstructionParametersFactory());
+        private readonly static Lazy<IInstructionParameterService> InstructionParameterService = new(() => new InstructionParameterService());
 
         [JsonProperty("executionStrategy")]
-        public IExecutionStrategy ExecutionStrategy { get; set; }
+        public required IExecutionStrategy ExecutionStrategy { get; set; }
         [JsonProperty("transitionStrategies")]
-        public List<ITransitionStrategy> TransitionStrategies { get; set; }
+        public required List<ITransitionStrategy> TransitionStrategies { get; set; }
         [JsonProperty("nextInstruction")]
-        public Instruction NextInstruction { get; set; }
+        public required Instruction NextInstruction { get; set; }
 
         public void LaunchNextInstruction()
         {
@@ -24,11 +25,8 @@ namespace EAI_Concept.interfaces.transitions
             if (NextInstruction is null)
                 return;
 
-            // Get the instruction type
-            InstructionType instructionType = NextInstruction.Type;
-
-            // Create the instruction parameter object using the factory
-            var instructionParameters = factory.Value.CreateInstruction(instructionType);
+            // Get the instruction parameters from the type
+            var instructionParameters = InstructionParameterService.Value.GetParametersForType(NextInstruction.Type);
 
             // Loop over the strategies to fill up the parameters and do some actions
             TransitionStrategies.ForEach(s => s.Apply(instructionParameters));
@@ -39,5 +37,7 @@ namespace EAI_Concept.interfaces.transitions
             // execute the next instruction
             ExecutionStrategy.Launch(NextInstruction);
         }
+
+       
     }
 }

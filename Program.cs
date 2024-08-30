@@ -35,6 +35,9 @@ namespace EAI_Concept
             Interface instructionSet = instructionSetService.DeserializeInstructionSet(json);
 
             InstructionDebugger.PrintInstructions(instructionSet);
+
+            InterfaceExecutionService interfaceExecutionService = new(new InstructionParameterService());
+            interfaceExecutionService.Execute(instructionSet);
         }
 
         private static InterfaceBuilderService InitInterfaceBuilder()

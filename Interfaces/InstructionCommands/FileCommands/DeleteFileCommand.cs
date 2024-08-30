@@ -1,4 +1,6 @@
-﻿namespace EAI_Concept.Interfaces.InstructionCommands.FileCommands
+﻿using EAI_Concept.Interfaces.Parameters;
+
+namespace EAI_Concept.Interfaces.InstructionCommands.FileCommands
 {
     public class DeleteFileCommandResult(bool isSucess, string deletedFilePath) : BaseFileCommandResult(isSucess)
     {
@@ -7,6 +9,8 @@
 
     public class DeleteFileCommand() : FileCommandHolder<DeleteFileCommandResult>()
     {
+        public override InstructionType Type => InstructionType.File;
+
         public override async Task<DeleteFileCommandResult> Execute()
         {
             // Logic to delete a file

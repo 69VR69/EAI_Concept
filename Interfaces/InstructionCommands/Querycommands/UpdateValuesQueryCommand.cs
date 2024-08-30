@@ -1,4 +1,6 @@
-﻿namespace EAI_Concept.Interfaces.InstructionCommands.Querycommands
+﻿using EAI_Concept.Interfaces.Parameters;
+
+namespace EAI_Concept.Interfaces.InstructionCommands.Querycommands
 {
     public class UpdateValuesQueryCommandResult(bool isSucess, int nbImpactedLines) : BaseQueryCommandResult(isSucess)
     {
@@ -7,10 +9,10 @@
 
     public class UpdateValuesQueryCommand() : QueryCommandHolder<UpdateValuesQueryCommandResult>()
     {
+        public override InstructionType Type => InstructionType.Query;
         public override async Task<UpdateValuesQueryCommandResult> Execute()
         {
             // Update SQL logic
-            await Task.Delay(500);
             Console.WriteLine($"Query executed : \n {Instruction.Query}");
 
             return new(isSucess: true, nbImpactedLines: 1);

@@ -8,5 +8,7 @@ namespace EAI_Concept.Interfaces.StateMachine
     {
         [JsonProperty("instructions")]
         public required List<Instruction> Instructions { get; set; }
+
+        public Instruction RootInstruction => Instructions?.FirstOrDefault(defaultValue: null) ;
     }
 }

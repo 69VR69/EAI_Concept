@@ -22,9 +22,10 @@ namespace EAI_Concept.Interfaces.InstructionCommands
         where TParameters : BaseInstructionParameters
         where TResult : BaseInstructionCommandResult
     {
-        public InstructionType Type => Instruction?.Type ?? InstructionType.None;
 
         public TParameters Instruction;
+
+        public abstract InstructionType Type { get; }
 
         async Task<BaseInstructionCommandResult> IInstructionCommand.Execute()
         {
