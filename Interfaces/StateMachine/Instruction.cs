@@ -9,7 +9,7 @@ namespace EAI_Concept.interfaces.transitions
 
     public class Instruction
     {
-        [JsonProperty("id")]
+        [JsonProperty("code")]
         public required string Code { get; set; }
 
         public InstructionType Type => Command.Type;
@@ -25,7 +25,7 @@ namespace EAI_Concept.interfaces.transitions
 
             // manage result
 
-            Transition.LaunchNextInstruction();
+            Transition?.LaunchNextInstruction();
         }
     }
 }

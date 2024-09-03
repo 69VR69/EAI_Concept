@@ -9,85 +9,92 @@ using Newtonsoft.Json;
 
 namespace EAI_Concept.Services
 {
-    public class InterfaceBuilderService(
-        InstructionCommandFactory commandFactory,
-        ExecutionStrategyFactory executionStrategyFactory,
-        TransitionStrategyFactory transitionStrategyFactory)
-    {
-        protected Lazy<JsonSerializerSettings> serializerSettings = new(() =>
-        {
-            JsonSerializerSettings settings = new();
-            settings.Converters.Add(new InstructionCommandConverter(commandFactory));
-            settings.Converters.Add(new ExecutionStrategyConverter(executionStrategyFactory));
-            settings.Converters.Add(new TransitionStrategyConverter(transitionStrategyFactory));
-            return settings;
-        });
+	public class InterfaceBuilderService(
+		InstructionCommandFactory commandFactory,
+		ExecutionStrategyFactory executionStrategyFactory,
+		TransitionStrategyFactory transitionStrategyFactory)
+	{
+		protected Lazy<JsonSerializerSettings> serializerSettings = new(() =>
+		{
+			JsonSerializerSettings settings = new()
+			{
+				Converters =
+				[
+				new InterfaceConverter(),
+				new InstructionCommandConverter(commandFactory),
+				new ExecutionStrategyConverter(executionStrategyFactory),
+				new TransitionStrategyConverter(transitionStrategyFactory),
+				]
+			};
 
-        public Interface DeserializeInstructionSet(string json)
-        {
-            var interfaceObj = JsonConvert.DeserializeObject<Interface>(json, serializerSettings.Value);
-            var instructionDict = BuildInstructionDictionary(interfaceObj);
+			return settings;
+		});
 
-            InitializeCommands(interfaceObj);
-            InitializeTransitions(interfaceObj, instructionDict);
+		public Interface DeserializeInstructionSet(string json)
+		{
+			var interfaceObj = JsonConvert.DeserializeObject<Interface>(json, serializerSettings.Value);
+			var instructionDict = BuildInstructionDictionary(interfaceObj);
 
-            return interfaceObj;
-        }
+			InitializeCommands(interfaceObj);
+			InitializeTransitions(interfaceObj, instructionDict);
 
-        private Dictionary<string, Instruction> BuildInstructionDictionary(Interface instructionSet)
-        {
-            var instructionDict = new Dictionary<string, Instruction>();
+			return interfaceObj;
+		}
 
-            foreach (var instruction in instructionSet.Instructions)
-            {
-                if (!string.IsNullOrEmpty(instruction.Code))
-                {
-                    instructionDict[instruction.Code] = instruction;
-                }
-            }
+		private Dictionary<string, Instruction> BuildInstructionDictionary(Interface instructionSet)
+		{
+			var instructionDict = new Dictionary<string, Instruction>();
 
-            return instructionDict;
-        }
+			foreach (var instruction in instructionSet.Instructions)
+			{
+				if (!string.IsNullOrEmpty(instruction.Code))
+				{
+					instructionDict[instruction.Code] = instruction;
+				}
+			}
 
-        private void InitializeCommands(Interface instructionSet)
-        {
-            foreach (var instruction in instructionSet.Instructions)
-            {
-                instruction.Command = commandFactory.CreateCommand(instruction.Command.ToString());
-            }
-        }
+			return instructionDict;
+		}
 
-        private void InitializeTransitions(Interface instructionSet, Dictionary<string, Instruction> instructionDict)
-        {
-            foreach (var instruction in instructionSet.Instructions)
-            {
-                if (instruction.Transition != null)
-                {
-                    ResolveNextInstruction(instruction.Transition, instructionDict);
-                }
-            }
-        }
+		private void InitializeCommands(Interface instructionSet)
+		{
+			foreach (var instruction in instructionSet.Instructions)
+			{
+				instruction.Command = commandFactory.CreateCommand(instruction.Command.ToString());
+			}
+		}
 
-        private void ResolveNextInstruction(Transition transition, Dictionary<string, Instruction> instructionDict)
-        {
-            if (transition.NextInstruction != null && transition.NextInstruction.Code == null)
-            {
-                var refPath = transition.NextInstruction.ToString();
-                var id = ExtractIdFromRef(refPath);
+		private void InitializeTransitions(Interface instructionSet, Dictionary<string, Instruction> instructionDict)
+		{
+			foreach (var instruction in instructionSet.Instructions)
+			{
+				if (instruction.Transition != null)
+				{
+					ResolveNextInstruction(instruction.Transition, instructionDict);
+				}
+			}
+		}
 
-                if (instructionDict.TryGetValue(id, out var nextInstruction))
-                {
-                    transition.NextInstruction = nextInstruction;
-                }
-                else
-                {
-                    throw new InvalidOperationException($"Unable to resolve reference: {refPath}");
-                }
-            }
-        }
+		private void ResolveNextInstruction(Transition transition, Dictionary<string, Instruction> instructionDict)
+		{
+			//if (!string.IsNullOrEmpty(transition.NextInstructionRef?.ToString()))
+			//{
+			//	var refPath = transition.NextInstructionRef.ToString();
+			//	var id = ExtractIdFromRef(refPath);
 
-        private string ExtractIdFromRef(string refPath)
-            => refPath.Split('/').Last();
-    }
+			//	if (instructionDict.TryGetValue(id, out var nextInstruction))
+			//	{
+			//		transition.NextInstruction = nextInstruction;
+			//	}
+			//	else
+			//	{
+			//		throw new InvalidOperationException($"Unable to resolve reference: {refPath}");
+			//	}
+			//}
+		}
+
+		private string ExtractIdFromRef(string refPath)
+			=> refPath.Split('/').Last();
+	}
 
 }

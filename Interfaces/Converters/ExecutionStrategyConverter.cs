@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 
 namespace EAI_Concept.Interfaces.Converters
 {
-    public class ExecutionStrategyConverter(ExecutionStrategyFactory executionStrategyFactory) : JsonConverter<IExecutionStrategy>
+	public class ExecutionStrategyConverter(ExecutionStrategyFactory executionStrategyFactory) : JsonConverter<IExecutionStrategy>
     {
         public override IExecutionStrategy ReadJson(JsonReader reader, Type objectType, IExecutionStrategy existingValue, bool hasExistingValue, JsonSerializer serializer)
         {

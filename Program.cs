@@ -13,18 +13,18 @@ namespace EAI_Concept
             string json = @"{
             ""instructions"": [
                 {
-                    ""id"": ""instruction1"",
+                    ""code"": ""instruction1"",
                     ""command"": ""UpdateValuesQueryCommand"",
                     ""transition"": {
                         ""executionStrategy"": ""BasicExecutionStrategy"",
                         ""transitionStrategies"": [
                             ""ContextMapTransitionStrategy""
                         ],
-                        ""nextInstruction"": { ""$ref"": ""#/instructions/1"" }
+                        ""nextInstruction"": { ""ref"": ""instruction2"" }
                     }
                 },
                 {
-                    ""id"": ""instruction2"",
+                    ""code"": ""instruction2"",
                     ""command"": ""DeleteFileCommand""
                 }
             ]
@@ -35,6 +35,8 @@ namespace EAI_Concept
             Interface instructionSet = instructionSetService.DeserializeInstructionSet(json);
 
             InstructionDebugger.PrintInstructions(instructionSet);
+
+            Console.WriteLine("\n-----------------------------------------------------------\n");
 
             InterfaceExecutionService interfaceExecutionService = new(new InstructionParameterService());
             interfaceExecutionService.Execute(instructionSet);

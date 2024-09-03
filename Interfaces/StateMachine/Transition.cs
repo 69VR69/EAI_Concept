@@ -5,6 +5,7 @@ using EAI_Concept.Interfaces.Strategies.Transition;
 using EAI_Concept.Services;
 
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace EAI_Concept.interfaces.transitions
 {
@@ -17,6 +18,7 @@ namespace EAI_Concept.interfaces.transitions
         [JsonProperty("transitionStrategies")]
         public required List<ITransitionStrategy> TransitionStrategies { get; set; }
         [JsonProperty("nextInstruction")]
+        public required JToken NextInstructionRef { get; set; }
         public required Instruction NextInstruction { get; set; }
 
         public void LaunchNextInstruction()
