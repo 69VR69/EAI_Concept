@@ -11,24 +11,24 @@ namespace EAI_Concept
         static void Main(string[] args)
         {
             string json = @"{
-            ""instructions"": [
-                {
-                    ""code"": ""instruction1"",
-                    ""command"": ""UpdateValuesQueryCommand"",
-                    ""transition"": {
-                        ""executionStrategy"": ""BasicExecutionStrategy"",
-                        ""transitionStrategies"": [
-                            ""ContextMapTransitionStrategy""
-                        ],
-                        ""nextInstruction"": { ""ref"": ""instruction2"" }
+                ""instructions"": [
+                    {
+                        ""code"": ""instruction1"",
+                        ""command"": ""UpdateValuesQueryCommand"",
+                        ""transition"": {
+                            ""executionStrategy"": ""BasicExecutionStrategy"",
+                            ""transitionStrategies"": [
+                                ""ContextMapTransitionStrategy""
+                            ],
+                            ""nextInstruction"": { ""ref"": ""instruction2"" }
+                        }
+                    },
+                    {
+                        ""code"": ""instruction2"",
+                        ""command"": ""DeleteFileCommand""
                     }
-                },
-                {
-                    ""code"": ""instruction2"",
-                    ""command"": ""DeleteFileCommand""
-                }
-            ]
-        }";
+                ]
+            }";
 
             InterfaceBuilderService instructionSetService = InitInterfaceBuilder();
 

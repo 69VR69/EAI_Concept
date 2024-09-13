@@ -1,0 +1,1 @@
+This is a POC of EAI architecture. This is not intended to be used like that, it's only dedicated to being a source of ideas. I've tried to use as ;uch as possible the design patterns but I'm not solution architect and I've spend only few hours along a week on it.

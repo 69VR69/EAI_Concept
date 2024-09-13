@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="NameAndType">
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.Factories.InstructionCommandFactory" Collapsed="true">
+    <Position X="24" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\Factories\InstructionCommandFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.FileCommands.DeleteFileCommandResult">
+    <Position X="14" Y="16.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>Interfaces\Commands\FileCommands\DeleteFileCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.FileCommands.DeleteFileCommand">
+    <Position X="9.75" Y="11" Width="3.25" />
+    <Members>
+      <Property Name="Type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\FileCommands\DeleteFileCommand.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.FileCommands.BaseFileCommandResult" Collapsed="true">
+    <Position X="14" Y="15" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\FileCommands\FileCommandHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.FileCommands.FileCommandHolder&lt;TResult&gt;">
+    <Position X="9.75" Y="9.25" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\FileCommands\FileCommandHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.Querycommands.BaseQueryCommandResult" Collapsed="true">
+    <Position X="17.25" Y="15" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\Querycommands\QueryCommandHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.Querycommands.QueryCommandHolder&lt;TResult&gt;">
+    <Position X="5.25" Y="9.25" Width="3.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\Querycommands\QueryCommandHolder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.Querycommands.UpdateValuesQueryCommandResult">
+    <Position X="16.75" Y="16.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\Querycommands\UpdateValuesQueryCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.Querycommands.UpdateValuesQueryCommand">
+    <Position X="5.25" Y="11" Width="3.75" />
+    <Members>
+      <Property Name="Type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\Querycommands\UpdateValuesQueryCommand.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.BaseInstructionCommandResult">
+    <Position X="15.75" Y="13.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\BaseInstructionCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.InstructionCommands.BaseInstructionCommand&lt;TParameters, TResult&gt;">
+    <Position X="6.75" Y="6.25" Width="4.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAJAEAAAQAAAAgAAAA=</HashCode>
+      <FileName>Interfaces\Commands\BaseInstructionCommand.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Converters.ExecutionStrategyConverter" Collapsed="true">
+    <Position X="25.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Converters\ExecutionStrategyConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Converters.InstructionCommandConverter" Collapsed="true">
+    <Position X="22.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Converters\InstructionCommandConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Converters.InterfaceConverter" Collapsed="true">
+    <Position X="24" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Converters\InstructionSetConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Converters.TransitionStrategyConverter" Collapsed="true">
+    <Position X="20.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Converters\TransitionStrategyConverter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Parameters.Factories.BaseInstructionParametersFactory">
+    <Position X="7.25" Y="13.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\Parameters\Factories\BaseInstructionParametersFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Parameters.Factories.FileInstructionParametersFactory">
+    <Position X="9.25" Y="15" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\Parameters\Factories\FileInstructionParametersFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Parameters.Factories.InstructionParametersFactory" Collapsed="true">
+    <Position X="20.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAACAAACAAAA=</HashCode>
+      <FileName>Interfaces\Parameters\Factories\InstructionParametersFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Parameters.Factories.QueryInstructionParametersFactory">
+    <Position X="5.25" Y="15" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
+      <FileName>Interfaces\Parameters\Factories\QueryInstructionParametersFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.interfaces.transitions.Instruction">
+    <Position X="4.5" Y="6.5" Width="1.5" />
+    <Members>
+      <Property Name="Type" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAgBAAAAABAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\StateMachine\Instruction.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Command" />
+      <Property Name="Transition" />
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="EAI_Concept.interfaces.transitions.Transition">
+    <Position X="3.25" Y="3.25" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAQCAAAAAAAAEAAAAAgAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Interfaces\StateMachine\Transition.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ExecutionStrategy" />
+      <Property Name="NextInstruction" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="TransitionStrategies" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EAI_Concept.interfaces.transitions.ContextMapTransitionStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="22.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Strategies\Transition\ContextMapTransitionStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.StateMachine.Interface">
+    <Position X="1.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Interfaces\StateMachine\Interface.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="RootInstruction" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Instructions" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Strategies.Execution.Factories.ExecutionStrategyFactory" Collapsed="true">
+    <Position X="20.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Strategies\Execution\Factories\ExecutionStrategyFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Strategies.Execution.BasicExecutionStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="20.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Strategies\Execution\BasicExecutionStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EAI_Concept.Interfaces.Strategies.Transition.Factories.TransitionStrategyFactory" Collapsed="true">
+    <Position X="22.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAA=</HashCode>
+      <FileName>Interfaces\Strategies\Transition\Factories\TransitionStrategyFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.services.ContextService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="24" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAQAAgAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Services\ContextService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EAI_Concept.Services.InstructionParameterService" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="25.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\InstructionParameterService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EAI_Concept.Services.InterfaceBuilderService" Collapsed="true">
+    <Position X="22.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IDABAAIAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Services\InterfaceBuilderService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EAI_Concept.InterfaceExecutionService" Collapsed="true">
+    <Position X="25.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\InterfaceExecutionService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="EAI_Concept.Interfaces.InstructionCommands.IInstructionCommand">
+    <Position X="0.5" Y="9.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Commands\BaseInstructionCommand.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Type" />
+    </ShowAsAssociation>
+  </Interface>
+  <Interface Name="EAI_Concept.Interfaces.Strategies.Execution.IExecutionStrategy">
+    <Position X="7" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Strategies\Execution\IExecutionStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EAI_Concept.Interfaces.Strategies.Transition.ITransitionStrategy">
+    <Position X="4" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Interfaces\Strategies\Transition\ITransitionStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EAI_Concept.services.IContextService" Collapsed="true">
+    <Position X="20.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Services\IContextService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EAI_Concept.Services.IInstructionParameterService" Collapsed="true">
+    <Position X="22.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IInstructionParameterService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="EAI_Concept.Interfaces.Parameters.InstructionType">
+    <Position X="3" Y="12" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAgAAAAAAAEAAAA=</HashCode>
+      <FileName>Interfaces\Parameters\InstructionType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
